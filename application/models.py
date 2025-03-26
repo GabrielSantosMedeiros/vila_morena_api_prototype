@@ -26,3 +26,18 @@ class Quarto(models.Model):
 
     class Meta:
         db_table = 'quartos'
+
+
+class Reserva(models.Model):
+    id = models.UUIDField(primary_key=True)
+    hospede = models.ForeignKey(to=Hospede, on_delete=models.CASCADE, null=False, blank=False)
+    quarto = models.ForeignKey(to=Quarto, on_delete=models.CASCADE, null=False, blank=False)
+    data_inicio = models.DateField(null=False, blank=False)
+    data_fim = models.DateField(null=False, blank=False)
+    check_in = models.BooleanField(default=False)
+    data_registro = models.DateTimeField(default=timezone.now)
+    data_ultima_atualizacao = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        db_table = 'reservas'
+    
