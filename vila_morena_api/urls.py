@@ -24,6 +24,8 @@ router.register(r'produtos', viewset=views.ProdutoViewSet)
 router.register(r'quartos', viewset=views.QuartoViewSet)
 router.register(r'hospedes', viewset=views.HospedeViewSet)
 router.register(r'reservas', viewset=views.ReservaViewSet)
+router.register(r'estoque', viewset=views.EstoqueViewSet)
+router.register(r'consumos', viewset=views.ConsumoViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),

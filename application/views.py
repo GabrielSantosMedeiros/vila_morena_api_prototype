@@ -30,3 +30,13 @@ class ReservaViewSet(viewsets.ModelViewSet):
     serializer_class=ReservaSerializer
 
     Reserva._result_cache = None
+
+
+class EstoqueViewSet(viewsets.ModelViewSet):
+    queryset=Estoque.objects.all()
+    serializer_class=EstoqueSerializer
+
+
+class ConsumoViewSet(viewsets.ModelViewSet):
+    queryset=Consumo.objects.all()
+    serializer_class=ConsumoSerializer
