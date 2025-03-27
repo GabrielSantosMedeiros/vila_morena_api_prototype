@@ -1,9 +1,10 @@
 from django.db import models
 from django.utils import timezone
+import uuid
 
 # Create your models here.
 class Hospede(models.Model):
-    id = models.UUIDField(primary_key=True)
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4)
     nome_completo = models.CharField(max_length=255, null=False, blank=False)
     documento = models.CharField(max_length=20, null=False, blank=False)
     tipo_documento = models.CharField(max_length=20, null=False, blank=False)
