@@ -30,7 +30,7 @@ class Quarto(models.Model):
 
 
 class Reserva(models.Model):
-    id = models.UUIDField(primary_key=True)
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4)
     hospede = models.ForeignKey(to=Hospede, on_delete=models.CASCADE, null=False, blank=False)
     quarto = models.ForeignKey(to=Quarto, on_delete=models.CASCADE, null=False, blank=False)
     data_inicio = models.DateField(null=False, blank=False)
@@ -69,7 +69,7 @@ class Estoque(models.Model):
 
 
 class Consumo(models.Model):
-    id = models.UUIDField(primary_key=True)
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4)
     reserva = models.ForeignKey(to=Reserva, on_delete=models.SET_NULL, null=True, blank=True)
     produto = models.ForeignKey(to=Produto, on_delete=models.CASCADE, null=False, blank=False)
     quantidade = models.IntegerField(null=False, blank=False)

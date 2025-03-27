@@ -23,6 +23,7 @@ router = routers.DefaultRouter()
 router.register(r'produtos', viewset=views.ProdutoViewSet)
 router.register(r'quartos', viewset=views.QuartoViewSet)
 router.register(r'hospedes', viewset=views.HospedeViewSet)
+router.register(r'reservas', viewset=views.ReservaViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),

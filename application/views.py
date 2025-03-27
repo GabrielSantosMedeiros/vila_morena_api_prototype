@@ -23,3 +23,10 @@ class HospedeViewSet(viewsets.ModelViewSet):
     serializer_class=HospedeSerializer
 
     Hospede._result_cache = None
+
+
+class ReservaViewSet(viewsets.ModelViewSet):
+    queryset=Reserva.objects.all()
+    serializer_class=ReservaSerializer
+
+    Reserva._result_cache = None

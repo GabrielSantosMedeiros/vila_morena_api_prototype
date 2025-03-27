@@ -17,6 +17,7 @@ class QuartoSerializer(serializers.ModelSerializer):
         fields = ['id', 'diaria', 'hospede_atual', 'hospede_ativo']
 
 
+
 class HospedeSerializer(serializers.ModelSerializer):
     id = serializers.UUIDField(read_only=True)
     data_registro = serializers.DateTimeField(read_only=True)
@@ -25,3 +26,13 @@ class HospedeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Hospede
         fields = ['id', 'nome_completo', 'documento', 'tipo_documento', 'data_nascimento', 'data_registro', 'data_ultima_atualizacao'] 
+
+
+class ReservaSerializer(serializers.ModelSerializer):
+    id = serializers.UUIDField(read_only=True)
+    data_registro = serializers.DateTimeField(read_only=True)
+    data_ultima_atualizacao = serializers.DateTimeField(read_only=True)
+    
+    class Meta:
+        model = Reserva
+        fields = '__all__'
